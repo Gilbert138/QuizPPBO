@@ -16,7 +16,7 @@ public class DatabaseHandler {
     public Connection con;
     private String driver = "com.mysql.cj.jdbc.Driver";
     private String url = "jdbc:mysql://localhost/db_quiz_ppbo";
-    // private String url = "jdbc:mysql://localhost/db_test?serverTimezone=" + TimeZone.getDefault().getID();
+//     private String url = "jdbc:mysql://localhost/db_test?serverTimezone=" + TimeZone.getDefault().getID();
     private String username = "root";
     private String password = "";
 
@@ -47,6 +47,7 @@ public class DatabaseHandler {
     public void connect() {
         try {
             con = logOn();
+            System.out.println("Connection Successfull");
         } catch (Exception ex) {
             System.out.println("Error occured when connecting to database");
         }
@@ -55,6 +56,7 @@ public class DatabaseHandler {
     public void disconnect() {
         try {
             logOff();
+            System.out.println("Disconnected");
         } catch (Exception ex) {
             System.out.println("Error occured when connecting to database");
         }
